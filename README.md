@@ -51,7 +51,9 @@ EliteAthlete/
 ├── coaches.html
 ├── blog.html
 ├── gallery.html
+├── shop.html
 ├── faq.html
+├── events.html
 ├── contact.html
 ├── css/
 │   └── style.css
