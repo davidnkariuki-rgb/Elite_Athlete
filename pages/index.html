@@ -4,15 +4,89 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elite Athlete</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <header>
-      <h1>Elite Athlete</h1>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Elite Athlete</a>
+        <nav class="site-nav">
+          <a href="training.html">Training</a>
+          <a href="nutrition.html">Nutrition</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="blog.html">Blog</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
     </header>
+
     <main>
-      <p>Welcome to Elite Athlete.</p>
+      <section class="hero-section">
+        <div class="container hero-content">
+          <span class="eyebrow">Performance. Precision. Power.</span>
+          <h1>Train smarter, fuel better, perform like a champion.</h1>
+          <p>Elite Athlete delivers training plans, nutrition guidance, and expert coaching resources for serious athletes and fitness enthusiasts.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="training.html">Explore Programs</a>
+            <a class="btn btn-secondary" href="nutrition.html">Nutrition Guide</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-grid container">
+        <article class="feature-card">
+          <h2>Custom Training</h2>
+          <p>Strength, cardio, and sport-specific routines built for progress and consistency.</p>
+        </article>
+        <article class="feature-card">
+          <h2>Smart Nutrition</h2>
+          <p>Meal plans, macro tracking, and hydration advice to support every stage of your journey.</p>
+        </article>
+        <article class="feature-card">
+          <h2>Expert Coaches</h2>
+          <p>Connect with qualified trainers and coaches who understand athlete development.</p>
+        </article>
+      </section>
+
+      <section class="spotlight-section container">
+        <div class="spotlight-text">
+          <p class="eyebrow">What you can do</p>
+          <h2>Complete athlete support in one polished platform.</h2>
+          <p>From beginner athletes to competitive performers, Elite Athlete makes it easy to stay motivated, informed, and on track.</p>
+        </div>
+        <div class="spotlight-list">
+          <div class="spotlight-item">
+            <h3>Training Plans</h3>
+            <p>Weekly schedules, exercise breakdowns, and progress tracking help you train with purpose.</p>
+          </div>
+          <div class="spotlight-item">
+            <h3>Nutrition Advice</h3>
+            <p>Balanced meals, supplement guidance, and recovery nutrition for peak results.</p>
+          </div>
+          <div class="spotlight-item">
+            <h3>Community Stories</h3>
+            <p>Real athlete stories, coaching tips, and motivational content designed for long-term success.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container cta-panel">
+          <h2>Ready to level up?</h2>
+          <p>Start with a training plan or get expert coaching support today.</p>
+          <a class="btn btn-primary" href="contact.html">Book a Session</a>
+        </div>
+      </section>
     </main>
-    <script src="app.js"></script>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Elite Athlete — Sports Training & Performance Platform</p>
+        <p>&copy; 2026 Elite Athlete. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
   </body>
 </html>
