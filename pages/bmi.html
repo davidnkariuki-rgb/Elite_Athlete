@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI Calculator — Elite Athlete</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-background">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Elite Athlete</a>
+      <nav class="site-nav">
+        <a href="training.html">Training</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="coaches.html">Coaches</a>
+        <a href="blog.html">Blog</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="page-intro">
+        <p class="eyebrow">Body Metrics</p>
+        <h1>BMI Calculator</h1>
+        <p>Use this simple calculator to estimate your body mass index and get direction for healthy goals.</p>
+      </div>
+
+      <section class="calculator-panel">
+        <form id="bmi-form" class="calculator-form">
+          <label for="height">Height (cm)</label>
+          <input id="height" name="height" type="number" min="100" max="250" required>
+
+          <label for="weight">Weight (kg)</label>
+          <input id="weight" name="weight" type="number" min="30" max="200" required>
+
+          <button class="btn btn-primary" type="submit">Calculate BMI</button>
+        </form>
+
+        <div id="bmi-result" class="bmi-result" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Elite Athlete — Sports Training & Performance Platform</p>
+      <p>&copy; 2026 Elite Athlete. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
