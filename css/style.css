@@ -29,3 +29,12 @@ body.training-page {
     background-size: cover;
     background-position: center;
 }
+
+/* Main Background for Remaining Pages */
+body.page-background {
+    background-image: url('../assets/backgroundimages/mainbackground.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
