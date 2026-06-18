@@ -1,0 +1,31 @@
+/* Shop Page Background */
+body.shop-page {
+    background-image: url('../assets/backgroundimages/shopbackground.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Nutrition Page Background */
+body.nutrition-page {
+    background-image: url('../assets/backgroundimages/Nutritionbackground.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Events Page Background */
+body.events-page {
+    background-image: url('../assets/backgroundimages/eventsbackground.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Training Page Background */
+body.training-page {
+    background-image: url('../assets/backgroundimages/trainingbackground.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
