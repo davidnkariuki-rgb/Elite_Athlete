@@ -314,6 +314,70 @@ a.btn-secondary {
     }
 }
 
+/* Coaches Page Styles */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto 2.75rem;
+}
+
+.coach-card {
+    background: rgba(7, 13, 23, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.coach-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 36px 90px rgba(0, 0, 0, 0.24);
+}
+
+.coach-card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.coach-card h3 {
+    margin: 1.25rem 1.5rem 0.35rem;
+    font-size: 1.45rem;
+    color: #fff;
+}
+
+.coach-card .role {
+    margin: 0 1.5rem 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ff9b75;
+    font-weight: 700;
+}
+
+.coach-card p {
+    margin: 0 1.5rem 1.5rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.65;
+    flex-grow: 1;
+}
+
+.coach-card p:last-child {
+    margin-bottom: 1.8rem;
+}
+
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Shop Page Background */
 body.shop-page {
     background-image: url('../assets/backgroundimages/shopbackground.jpg');
