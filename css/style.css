@@ -254,6 +254,10 @@ a.btn-secondary {
     .spotlight-section {
         grid-template-columns: 1fr;
     }
+
+    .plans-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 }
 
 @media (max-width: 680px) {
@@ -274,6 +278,40 @@ a.btn-secondary {
     .feature-grid {
         gap: 1rem;
     }
+
+    .page-intro {
+        padding: 60px 0 40px;
+    }
+
+    .page-intro h1 {
+        font-size: 2.2rem;
+    }
+
+    .plans-grid {
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-highlight {
+        padding: 24px 20px;
+    }
+
+    .recipe-highlight h2 {
+        font-size: 1.4rem;
+    }
+
+    .recipe-highlight ul {
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .tools-actions {
+        flex-direction: column;
+    }
+
+    .tools-actions .btn {
+        width: 100%;
+    }
 }
 
 /* Shop Page Background */
@@ -286,7 +324,7 @@ body.shop-page {
 
 /* Nutrition Page Background */
 body.nutrition-page {
-    background-image: url('../assets/backgroundimages/Nutritionbackground.jpg');
+    background-image: url('../assets/backgroundimages/eventsbackground.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -310,9 +348,150 @@ body.training-page {
 
 /* Main Background for Remaining Pages */
 body.page-background {
-    background-image: url('../assets/backgroundimages/mainbackground.jpg');
+    background-image: url('../assets/backgroundimages/shopbackground.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+}
+
+/* Page Intro Section */
+.page-intro {
+    padding: 80px 0 60px;
+    text-align: left;
+}
+
+.page-intro h1 {
+    margin: 0.8rem 0 1.2rem;
+    font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.page-intro p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    max-width: 620px;
+}
+
+/* Plans Grid - Nutrition Page */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3.5rem auto;
+}
+
+/* Plan Card */
+.plan-card {
+    background: rgba(7, 13, 23, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.3);
+}
+
+.plan-card h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.plan-meta {
+    display: block;
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    color: #ff9b75;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.plan-card p {
+    margin: 0 0 1.2rem;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.6;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0 1.5rem;
+}
+
+.plan-card li {
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.plan-card li:last-child {
+    margin-bottom: 0;
+}
+
+/* Recipe Highlight Section */
+.recipe-highlight {
+    background: rgba(4, 10, 20, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px 36px;
+    margin: 3.5rem 0;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.recipe-highlight h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.recipe-highlight p {
+    margin: 0 0 1.5rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.05rem;
+}
+
+.recipe-highlight ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.recipe-highlight li {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Tools Section */
+.tools {
+    margin: 3.5rem 0;
+}
+
+.tools h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.tools p {
+    margin: 0 0 2rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.05rem;
+}
+
+.tools-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
