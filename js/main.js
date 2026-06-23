@@ -198,4 +198,75 @@ document.addEventListener('DOMContentLoaded', function () {
       closeBlogModal();
     }
   });
+
+  // Event Registration Modal Functionality
+  const eventModal = document.getElementById('eventModal');
+  const closeEventModal = document.getElementById('closeEventModal');
+  const eventBackdrop = document.getElementById('eventBackdrop');
+  const eventTitle = document.getElementById('eventTitle');
+  const eventForm = document.getElementById('eventForm');
+
+  function openEventModal(eventName) {
+    eventTitle.textContent = eventName;
+    eventForm.reset();
+    eventModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeEventRegistration() {
+    eventModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Register Button Event Listeners
+  const registerButtons = document.querySelectorAll('.register-btn');
+  registerButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const eventName = this.getAttribute('data-event');
+      openEventModal(eventName);
+    });
+  });
+
+  // Close Event Modal Handlers
+  if (closeEventModal) {
+    closeEventModal.addEventListener('click', closeEventRegistration);
+  }
+  if (eventBackdrop) {
+    eventBackdrop.addEventListener('click', closeEventRegistration);
+  }
+
+  // Close event modal on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && eventModal && eventModal.classList.contains('active')) {
+      closeEventRegistration();
+    }
+  });
+
+  // Handle Event Form Submission
+  if (eventForm) {
+    eventForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = {
+        event: eventTitle.textContent,
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        experience: document.getElementById('experience').value,
+        sport: document.getElementById('sport').value,
+        goals: document.getElementById('goals').value,
+        newsletter: document.getElementById('newsletter').checked
+      };
+
+      // Log submission (in real app, this would send to server)
+      console.log('Event Registration Submitted:', formData);
+      
+      // Show success message
+      alert(`Thank you for registering for "${formData.event}"!\n\nA confirmation email has been sent to ${formData.email}`);
+      
+      // Close modal
+      closeEventRegistration();
+    });
+  }
 });
