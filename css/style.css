@@ -805,6 +805,51 @@ body.nutrition-page {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    color: #f5f5f5;
+}
+
+body.nutrition-page .site-header {
+    background: rgba(2, 7, 15, 0.92);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+body.nutrition-page .site-nav a,
+body.nutrition-page .brand {
+    color: #f5f5f5;
+}
+
+body.nutrition-page .page-intro {
+    background: rgba(5, 11, 20, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 40px 36px;
+    border-radius: 28px;
+}
+
+body.nutrition-page .page-intro h1,
+body.nutrition-page .page-intro p,
+body.nutrition-page .page-intro .eyebrow {
+    color: #f5f5f5;
+}
+
+body.nutrition-page .plans-grid,
+body.nutrition-page .recipe-highlight,
+body.nutrition-page .tools,
+body.nutrition-page .cta-panel {
+    background: rgba(5, 11, 20, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 26px;
+    backdrop-filter: blur(12px);
+}
+
+body.nutrition-page .page-intro .eyebrow {
+    color: #ff9b75;
+}
+
+body.nutrition-page .plans-grid,
+body.nutrition-page .recipe-highlight,
+body.nutrition-page .tools,
+body.nutrition-page .cta-panel {
+    backdrop-filter: blur(12px);
 }
 
 /* Events Page Background */
