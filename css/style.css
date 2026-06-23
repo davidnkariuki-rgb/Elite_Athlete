@@ -1235,6 +1235,30 @@ body.faq-page .container {
     font-size: 0.95rem;
 }
 
+.detail-block {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.4s ease;
+}
+
+.detail-block.active {
+    display: block;
+    opacity: 1;
+    max-height: 2000px;
+}
+
+.detail-block h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.detail-block p,
+.detail-block li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 /* Tools Section */
 .tools {
     margin: 3.5rem 0;

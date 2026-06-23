@@ -199,6 +199,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Nutrition plan detail toggles
+  const planActions = document.querySelectorAll('.plan-action');
+  const detailBlocks = document.querySelectorAll('.detail-block');
+
+  function showPlanDetail(planId) {
+    detailBlocks.forEach(block => {
+      block.classList.toggle('active', block.id === planId);
+    });
+
+    const target = document.getElementById(planId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  if (planActions.length && detailBlocks.length) {
+    planActions.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const planId = this.getAttribute('data-plan');
+        if (planId) {
+          showPlanDetail(planId);
+        }
+      });
+    });
+
+    // Ensure only the first detail block is visible by default
+    detailBlocks.forEach((block, index) => {
+      block.classList.toggle('active', index === 0);
+    });
+  }
+
   // Event Registration Modal Functionality
   const eventModal = document.getElementById('eventModal');
   const closeEventModal = document.getElementById('closeEventModal');
