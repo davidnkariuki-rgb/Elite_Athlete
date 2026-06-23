@@ -773,6 +773,53 @@ body.events-page {
     background-position: center;
 }
 
+/* FAQ Page Background */
+body.faq-page {
+    background-color: #07080c;
+    color: #f5f5f5;
+}
+
+body.faq-page .site-header {
+    position: relative;
+    background: rgba(12, 15, 22, 0.95);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+body.faq-page .container.header-inner {
+    padding: 1rem 0;
+}
+
+body.faq-page .brand,
+body.faq-page .site-nav a,
+body.faq-page .site-nav a:hover {
+    color: #f5f5f5;
+}
+
+body.faq-page .site-nav a:hover {
+    color: #ff9b75;
+}
+
+body.faq-page .page-intro {
+    background: rgba(10, 13, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 42px 36px;
+    border-radius: 28px;
+}
+
+body.faq-page .page-intro h1,
+body.faq-page .page-intro p,
+body.faq-page .page-intro .eyebrow {
+    color: #f5f5f5;
+}
+
+body.faq-page .page-intro .eyebrow {
+    color: #ff9b75;
+}
+
+body.faq-page .container {
+    max-width: 1040px;
+}
+
 /* Training Page Background */
 body.training-page {
     background-image: url('../assets/backgroundimages/trainingbackground.jpg');
@@ -917,33 +964,86 @@ body.page-background {
     background: rgba(255, 255, 255, 0.03);
 }
 
-.faq-preview {
+.faq-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 2.5rem;
 }
 
 .faq-item {
-    background: rgba(7, 13, 23, 0.82);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 28px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+    background: rgba(16, 22, 34, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    padding: 26px 28px;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
 }
 
-.faq-item h4 {
-    margin: 0 0 0.8rem;
-    color: #fff;
-    font-size: 1.1rem;
+.faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f7f7f7;
+    margin: 0;
+    padding: 0.6rem 0;
+}
+
+.faq-item summary::before {
+    content: '\25BA';
+    display: inline-block;
+    margin-right: 0.9rem;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease;
+    color: #ff9b75;
+}
+
+.faq-item[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item::marker,
+.faq-item summary::marker {
+    display: none;
 }
 
 .faq-item p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.76);
-    line-height: 1.75;
+    margin: 1rem 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
+.faq-item[open] {
+    background: rgba(12, 18, 28, 0.98);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.faq-page .page-intro {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dce0e6;
+    padding: 36px 32px;
+    border-radius: 24px;
+}
+
+body.faq-page .page-intro h1,
+body.faq-page .page-intro p,
+body.faq-page .page-intro .eyebrow {
+    color: #111;
+}
+
+body.faq-page .container {
+    max-width: 1040px;
+}
+
+@media (max-width: 900px) {
+    .faq-item {
+        padding: 20px;
+    }
+}
 @media (max-width: 900px) {
     .training-grid,
     .faq-preview {
