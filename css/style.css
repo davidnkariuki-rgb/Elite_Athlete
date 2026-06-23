@@ -692,6 +692,14 @@ a.btn-secondary {
     }
 }
 
+/* Blog Page Background */
+body.blog-page {
+    background-image: url('../assets/backgroundimages/blog image.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
 /* Shop Page Background */
 body.shop-page {
     background-image: url('../assets/backgroundimages/shopbackground.jpg');
