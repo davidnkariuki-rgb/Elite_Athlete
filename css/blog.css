@@ -1,0 +1,154 @@
+body.blog-page {
+  background-image: url('../assets/backgroundimages/blog image.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto 2.5rem;
+}
+
+.post-card {
+  background: rgba(7, 13, 23, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  padding: 32px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.22);
+}
+
+.post-card h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.post-meta {
+  margin: 0 0 1.2rem;
+  font-size: 0.94rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ff9b75;
+}
+
+.post-card p {
+  margin: 0 0 1.5rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  color: #ff9b75;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.read-more:hover {
+  color: #fff;
+}
+
+.blog-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.blog-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  position: relative;
+  background: rgba(7, 13, 23, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  animation: slideIn 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+.modal-body h2 {
+  margin: 0 0 0.8rem;
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.modal-body .post-meta {
+  margin: 0 0 1.5rem;
+}
+
+.modal-body p {
+  margin: 0 0 1.5rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
