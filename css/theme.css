@@ -1,0 +1,378 @@
+/* ==============================================
+   Elite Athlete — Theme Toggle Button
+   ============================================== */
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.35rem 0.65rem;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.16);
+  color: #111827;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ==============================================
+   Light Mode — Base
+   ============================================== */
+
+[data-theme="light"],
+[data-theme="light"] body {
+  color: #111827;
+  background-color: #f0f2f5;
+}
+
+[data-theme="light"] body.page-background,
+[data-theme="light"] body.bmi-page {
+  background-image: none;
+  background-color: #f0f2f5;
+}
+
+/* ==============================================
+   Light Mode — Header & Nav
+   ============================================== */
+
+[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .brand {
+  color: #111827;
+}
+
+[data-theme="light"] .site-nav a {
+  color: rgba(17, 24, 39, 0.78);
+}
+
+[data-theme="light"] .site-nav a:hover {
+  color: #111827;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ==============================================
+   Light Mode — Footer
+   ============================================== */
+
+[data-theme="light"] .site-footer {
+  background: rgba(255, 255, 255, 0.96);
+  border-top-color: rgba(0, 0, 0, 0.08);
+  color: rgba(17, 24, 39, 0.65);
+}
+
+/* ==============================================
+   Light Mode — Shared Panels & Buttons
+   ============================================== */
+
+[data-theme="light"] .page-intro {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .page-intro h1 {
+  color: #111827;
+}
+
+[data-theme="light"] .page-intro p {
+  color: rgba(17, 24, 39, 0.74);
+}
+
+[data-theme="light"] .cta-panel {
+  background: linear-gradient(180deg, rgba(255, 116, 82, 0.08), rgba(240, 242, 245, 0.98));
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .cta-panel h2,
+[data-theme="light"] .cta-panel p {
+  color: #111827;
+}
+
+[data-theme="light"] a.btn-secondary {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: #111827;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+[data-theme="light"] a.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ==============================================
+   Light Mode — Forms
+   ============================================== */
+
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.14);
+  color: #111827;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: rgba(17, 24, 39, 0.4);
+}
+
+/* ==============================================
+   Light Mode — Login Modal
+   ============================================== */
+
+[data-theme="light"] .login-modal-panel {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .login-modal-panel h2,
+[data-theme="light"] .login-modal-panel > p,
+[data-theme="light"] .login-modal-copy label {
+  color: #111827;
+}
+
+[data-theme="light"] .login-modal-close {
+  background: rgba(0, 0, 0, 0.06);
+  color: #111827;
+}
+
+[data-theme="light"] .login-modal-tab {
+  color: rgba(17, 24, 39, 0.65);
+}
+
+[data-theme="light"] .login-modal-alt,
+[data-theme="light"] .login-modal-note {
+  color: rgba(17, 24, 39, 0.6);
+}
+
+/* ==============================================
+   Light Mode — Cards (all pages)
+   ============================================== */
+
+[data-theme="light"] .hero-content,
+[data-theme="light"] .feature-card,
+[data-theme="light"] .spotlight-text,
+[data-theme="light"] .program-card,
+[data-theme="light"] .sample-week,
+[data-theme="light"] .faq-preview,
+[data-theme="light"] .plan-card,
+[data-theme="light"] .recipe-highlight,
+[data-theme="light"] .detail-block,
+[data-theme="light"] .tools,
+[data-theme="light"] .post-card,
+[data-theme="light"] .product-card,
+[data-theme="light"] .event-card,
+[data-theme="light"] .coach-card,
+[data-theme="light"] .contact-form,
+[data-theme="light"] .contact-info,
+[data-theme="light"] .calculator-form {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .spotlight-item {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .modal-content,
+[data-theme="light"] .event-modal .modal-content,
+[data-theme="light"] .faq-item[open] {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .faq-item {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+/* ==============================================
+   Light Mode — Text inside cards
+   ============================================== */
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] .hero-content p,
+[data-theme="light"] .feature-card p,
+[data-theme="light"] .spotlight-text p,
+[data-theme="light"] .spotlight-item h3,
+[data-theme="light"] .spotlight-item p,
+[data-theme="light"] .program-card h3,
+[data-theme="light"] .faq-preview h3,
+[data-theme="light"] .faq-preview p,
+[data-theme="light"] .plan-card h3,
+[data-theme="light"] .recipe-highlight h2,
+[data-theme="light"] .recipe-highlight h3,
+[data-theme="light"] .recipe-highlight p,
+[data-theme="light"] .recipe-highlight li,
+[data-theme="light"] .detail-block h3,
+[data-theme="light"] .detail-block p,
+[data-theme="light"] .detail-block li,
+[data-theme="light"] .tools h2,
+[data-theme="light"] .tools p,
+[data-theme="light"] .post-card h2,
+[data-theme="light"] .post-card h3,
+[data-theme="light"] .modal-content h2,
+[data-theme="light"] .modal-content h3,
+[data-theme="light"] .modal-content p,
+[data-theme="light"] .modal-content li,
+[data-theme="light"] .product-card h3,
+[data-theme="light"] .event-card h2,
+[data-theme="light"] .event-card h3,
+[data-theme="light"] .event-modal h2,
+[data-theme="light"] .event-modal p,
+[data-theme="light"] .coach-card h3,
+[data-theme="light"] .contact-info h3,
+[data-theme="light"] .contact-info h4,
+[data-theme="light"] .contact-info p strong,
+[data-theme="light"] .faq-item summary {
+  color: #111827;
+}
+
+[data-theme="light"] .program-card p,
+[data-theme="light"] .plan-card p,
+[data-theme="light"] .plan-card li,
+[data-theme="light"] .post-card p,
+[data-theme="light"] .product-card p,
+[data-theme="light"] .event-card p,
+[data-theme="light"] .coach-card p,
+[data-theme="light"] .contact-info p,
+[data-theme="light"] .faq-item p,
+[data-theme="light"] .bmi-result p {
+  color: rgba(17, 24, 39, 0.76);
+}
+
+[data-theme="light"] .program-card li {
+  color: rgba(17, 24, 39, 0.74);
+}
+
+[data-theme="light"] .modal-close {
+  color: rgba(17, 24, 39, 0.55);
+}
+
+[data-theme="light"] .modal-close:hover {
+  color: #111827;
+}
+
+/* ==============================================
+   Light Mode — Contact form inputs
+   ============================================== */
+
+[data-theme="light"] .contact-form label,
+[data-theme="light"] .calculator-form label,
+[data-theme="light"] .event-modal .form-group label {
+  color: rgba(17, 24, 39, 0.78);
+}
+
+[data-theme="light"] .contact-form input,
+[data-theme="light"] .contact-form textarea,
+[data-theme="light"] .calculator-form input {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.14);
+  color: #111827;
+}
+
+[data-theme="light"] .event-modal .form-note {
+  color: rgba(17, 24, 39, 0.6);
+}
+
+/* ==============================================
+   Light Mode — Page-specific overrides
+   ============================================== */
+
+[data-theme="light"] body.faq-page {
+  background-color: #f0f2f5;
+  color: #111827;
+}
+
+[data-theme="light"] .schedule-table th {
+  color: rgba(17, 24, 39, 0.72);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .schedule-table td {
+  color: rgba(17, 24, 39, 0.8);
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .bmi-result {
+  background: linear-gradient(180deg, rgba(255, 116, 82, 0.1), rgba(240, 242, 245, 0.96));
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #111827;
+}
+
+[data-theme="light"] .login-intro,
+[data-theme="light"] .login-help {
+  color: rgba(17, 24, 39, 0.76);
+}
+
+/* ==============================================
+   Light Mode — Nutrition page (high-specificity overrides)
+   ============================================== */
+
+[data-theme="light"] body.nutrition-page {
+  background-image: none;
+  background-color: #f0f2f5;
+  color: #111827;
+}
+
+[data-theme="light"] body.nutrition-page .page-intro {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] body.nutrition-page .page-intro h1,
+[data-theme="light"] body.nutrition-page .page-intro p {
+  color: #111827;
+}
+
+[data-theme="light"] body.nutrition-page .plans-grid,
+[data-theme="light"] body.nutrition-page .recipe-highlight,
+[data-theme="light"] body.nutrition-page .tools,
+[data-theme="light"] body.nutrition-page .cta-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] body.nutrition-page .cta-panel h2,
+[data-theme="light"] body.nutrition-page .cta-panel p,
+[data-theme="light"] body.nutrition-page .recipe-highlight h2,
+[data-theme="light"] body.nutrition-page .recipe-highlight p,
+[data-theme="light"] body.nutrition-page .recipe-highlight li,
+[data-theme="light"] body.nutrition-page .tools h2,
+[data-theme="light"] body.nutrition-page .tools p {
+  color: #111827;
+}
+
+/* ==============================================
+   Light Mode — Gallery page
+   ============================================== */
+
+[data-theme="light"] body.gallery-page {
+  background: #f0f2f5;
+  color: #111827;
+}
+
+[data-theme="light"] .gallery-item {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.1);
+}
