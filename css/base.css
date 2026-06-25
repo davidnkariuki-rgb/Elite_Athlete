@@ -242,6 +242,7 @@ a.btn-secondary {
   display: grid;
   place-items: center;
   padding: 24px;
+  overflow-y: auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
@@ -263,6 +264,8 @@ a.btn-secondary {
 .login-modal-panel {
   position: relative;
   width: min(420px, calc(100% - 24px));
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
   background: linear-gradient(180deg, rgba(13, 20, 34, 0.98), rgba(7, 13, 23, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 28px;
@@ -293,6 +296,34 @@ a.btn-secondary {
 .login-modal-panel p {
   margin: 0 0 1.4rem;
   color: rgba(255, 255, 255, 0.78);
+}
+
+.login-modal-switcher {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+}
+
+.login-modal-tab {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.login-modal-tab.active {
+  background: linear-gradient(135deg, #ff7452 0%, #ff4956 100%);
+  border-color: transparent;
+  color: #fff;
+}
+
+.login-modal-copy {
+  margin-bottom: 1.4rem;
 }
 
 .login-modal-form label {
@@ -330,6 +361,25 @@ a.btn-secondary {
 
 .login-modal-form button {
   width: 100%;
+}
+
+.login-modal-form[hidden] {
+  display: none;
+}
+
+.login-modal-alt {
+  margin-top: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+}
+
+.login-modal-alt button {
+  border: none;
+  background: none;
+  color: #ff9b75;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .login-modal-note {
