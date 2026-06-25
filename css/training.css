@@ -1,0 +1,147 @@
+body.training-page {
+  background-image: url('../assets/backgroundimages/trainingbackground.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin: 3rem auto 2.5rem;
+}
+
+.program-card {
+  background: rgba(7, 13, 23, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  padding: 32px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: grid;
+  gap: 1rem;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 82px rgba(0, 0, 0, 0.22);
+}
+
+.program-card h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  color: #fff;
+}
+
+.program-meta {
+  margin: 0;
+  color: #ff9b75;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.program-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+}
+
+.program-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.program-card li {
+  padding-left: 1.1rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.program-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ff9b75;
+}
+
+.sample-week {
+  background: rgba(4, 10, 20, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 26px;
+  padding: 36px;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2.5rem;
+}
+
+.sample-week h2,
+.faq-preview h2 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.schedule-table th {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  text-align: left;
+  font-weight: 700;
+}
+
+.schedule-table td {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.schedule-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-preview {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.faq-item {
+  background: rgba(16, 22, 34, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 24px 28px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+}
+
+.faq-item h4 {
+  margin: 0;
+  color: #f7f7f7;
+  font-size: 1.15rem;
+}
+
+.faq-item p {
+  margin: 0.8rem 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .training-grid,
+  .faq-preview {
+    grid-template-columns: 1fr;
+  }
+}

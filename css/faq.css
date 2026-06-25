@@ -1,0 +1,74 @@
+body.faq-page {
+  background-color: #07080c;
+  color: #f5f5f5;
+}
+
+body.faq-page .site-nav a:hover,
+body.faq-page .page-intro .eyebrow {
+  color: #ff9b75;
+}
+
+body.faq-page .container {
+  max-width: 1040px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.faq-item {
+  background: rgba(16, 22, 34, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 26px 28px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f7f7f7;
+  margin: 0;
+  padding: 0.6rem 0;
+}
+
+.faq-item summary::before {
+  content: '\25BA';
+  display: inline-block;
+  margin-right: 0.9rem;
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+  color: #ff9b75;
+}
+
+.faq-item[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.faq-item summary::-webkit-details-marker,
+.faq-item::marker,
+.faq-item summary::marker {
+  display: none;
+}
+
+.faq-item p {
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.faq-item[open] {
+  background: rgba(12, 18, 28, 0.98);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 900px) {
+  .faq-item {
+    padding: 20px;
+  }
+}

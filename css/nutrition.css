@@ -6,16 +6,6 @@ body.nutrition-page {
   color: #f5f5f5;
 }
 
-body.nutrition-page .site-header {
-  background: rgba(2, 7, 15, 0.92);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-}
-
-body.nutrition-page .site-nav a,
-body.nutrition-page .brand {
-  color: #f5f5f5;
-}
-
 body.nutrition-page .page-intro {
   background: rgba(5, 11, 20, 0.86);
   border: 1px solid rgba(255, 255, 255, 0.12);
