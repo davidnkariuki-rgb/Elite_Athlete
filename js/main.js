@@ -1,4 +1,95 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const siteNav = document.querySelector('.site-nav');
+
+  if (siteNav && !siteNav.querySelector('.nav-login-trigger')) {
+    const loginTrigger = document.createElement('button');
+    loginTrigger.type = 'button';
+    loginTrigger.className = 'nav-login-trigger';
+    loginTrigger.textContent = 'Login';
+    siteNav.appendChild(loginTrigger);
+  }
+
+  if (!document.getElementById('loginModal')) {
+    document.body.insertAdjacentHTML(
+      'beforeend',
+      `
+        <div class="login-modal" id="loginModal" aria-hidden="true">
+          <div class="login-modal-backdrop" id="loginModalBackdrop"></div>
+          <div class="login-modal-panel" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+            <button class="login-modal-close" id="loginModalClose" type="button" aria-label="Close login form">&times;</button>
+            <h2 id="loginModalTitle">Member Login</h2>
+            <p>Enter your Gmail, phone number, and password.</p>
+            <form class="login-modal-form" id="loginModalForm">
+              <label for="loginEmail">Gmail Address</label>
+              <input id="loginEmail" name="email" type="email" placeholder="athlete@gmail.com" pattern=".+@gmail\\.com" required>
+
+              <label for="loginPhone">Phone Number</label>
+              <input id="loginPhone" name="phone" type="tel" placeholder="0123456789" inputmode="numeric" required>
+
+              <label for="loginPassword">Password</label>
+              <input id="loginPassword" name="password" type="password" placeholder="Enter your password" minlength="6" required>
+
+              <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+            <p class="login-modal-note">This is a simple front-end popup for your project layout.</p>
+          </div>
+        </div>
+      `
+    );
+  }
+
+  const loginTrigger = document.querySelector('.nav-login-trigger');
+  const loginModal = document.getElementById('loginModal');
+  const loginModalBackdrop = document.getElementById('loginModalBackdrop');
+  const loginModalClose = document.getElementById('loginModalClose');
+  const loginModalForm = document.getElementById('loginModalForm');
+
+  function openLoginModal() {
+    if (!loginModal) {
+      return;
+    }
+
+    loginModal.classList.add('active');
+    loginModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    const loginEmailInput = document.getElementById('loginEmail');
+    if (loginEmailInput) {
+      loginEmailInput.focus();
+    }
+  }
+
+  function closeLoginModal() {
+    if (!loginModal) {
+      return;
+    }
+
+    loginModal.classList.remove('active');
+    loginModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = 'auto';
+  }
+
+  if (loginTrigger) {
+    loginTrigger.addEventListener('click', openLoginModal);
+  }
+
+  if (loginModalBackdrop) {
+    loginModalBackdrop.addEventListener('click', closeLoginModal);
+  }
+
+  if (loginModalClose) {
+    loginModalClose.addEventListener('click', closeLoginModal);
+  }
+
+  if (loginModalForm) {
+    loginModalForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      alert('Login submitted. Connect this form to your backend when you are ready.');
+      loginModalForm.reset();
+      closeLoginModal();
+    });
+  }
+
   const bmiForm = document.getElementById('bmi-form');
   const bmiResult = document.getElementById('bmi-result');
 
@@ -194,7 +285,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Close modal on Escape key
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && blogModal.classList.contains('active')) {
+    if (e.key === 'Escape' && loginModal && loginModal.classList.contains('active')) {
+      closeLoginModal();
+    }
+
+    if (e.key === 'Escape' && blogModal && blogModal.classList.contains('active')) {
       closeBlogModal();
     }
   });

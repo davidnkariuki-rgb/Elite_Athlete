@@ -1,0 +1,98 @@
+body.page-background .login-page {
+  padding: 56px 0 32px;
+}
+
+.login-intro {
+  max-width: 760px;
+}
+
+body.page-background .login-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 2rem;
+  align-items: start;
+  margin: 2.5rem auto 0;
+}
+
+.login-form,
+.login-help {
+  background: rgba(7, 13, 23, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 26px;
+  padding: 32px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.login-form input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  color: #fff;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.35rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.login-form input:focus {
+  border-color: rgba(255, 116, 82, 0.8);
+  box-shadow: 0 0 0 4px rgba(255, 116, 82, 0.12);
+}
+
+.login-form button {
+  width: 100%;
+}
+
+.login-help h2 {
+  margin: 0 0 0.9rem;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.login-help p,
+.login-help li {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.login-help ul {
+  margin: 1.2rem 0 1.8rem;
+  padding-left: 1.2rem;
+}
+
+.login-help li + li {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  body.page-background .login-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  body.page-background .login-page {
+    padding-top: 36px;
+  }
+
+  .login-form,
+  .login-help {
+    padding: 24px;
+  }
+}

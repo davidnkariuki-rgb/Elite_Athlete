@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Login - Elite Athlete</title>
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/login.css">
+	</head>
+	<body class="page-background">
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="index.html">Elite Athlete</a>
+				<nav class="site-nav">
+					<a href="training.html">Training</a>
+					<a href="nutrition.html">Nutrition</a>
+					<a href="coaches.html">Coaches</a>
+					<a href="blog.html">Blog</a>
+					<a href="gallery.html">Gallery</a>
+					<a href="events.html">Events</a>
+					<a href="faq.html">FAQ</a>
+					<a href="shop.html">Shop</a>
+					<a href="contact.html">Contact</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="container login-page">
+				<div class="page-intro login-intro">
+					<p class="eyebrow">Member Access</p>
+					<h1>Log in to your Elite Athlete account</h1>
+					<p>Use your Gmail address, phone number, and password to continue to your training, nutrition, and coaching resources.</p>
+				</div>
+
+				<section class="login-layout">
+					<form class="login-form" action="#" method="post">
+						<label for="email">Gmail Address</label>
+						<input id="email" name="email" type="email" placeholder="athlete@gmail.com" pattern=".+@gmail\.com" required>
+
+						<label for="phone">Phone Number</label>
+						<input id="phone" name="phone" type="tel" placeholder="0123456789" inputmode="numeric" required>
+
+						<label for="password">Password</label>
+						<input id="password" name="password" type="password" placeholder="Enter your password" minlength="6" required>
+
+						<button class="btn btn-primary" type="submit">Login</button>
+					</form>
+
+					<aside class="login-help">
+						<h2>Quick Access</h2>
+						<p>Keep your login simple and secure so you can get back to your athlete dashboard faster.</p>
+						<ul>
+							<li>Use a valid Gmail account.</li>
+							<li>Enter the phone number linked to your profile.</li>
+							<li>Passwords must be at least 6 characters.</li>
+						</ul>
+						<a class="btn btn-secondary" href="signup.html">Create an Account</a>
+					</aside>
+				</section>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<p>Elite Athlete - Sports Training & Performance Platform</p>
+				<p>&copy; 2026 Elite Athlete. All rights reserved.</p>
+			</div>
+		</footer>
+
+		<script src="../js/main.js"></script>
+	</body>
+</html>

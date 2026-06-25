@@ -120,6 +120,22 @@ a.btn-secondary {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.site-nav .nav-login-trigger {
+  background: linear-gradient(135deg, #ff7452 0%, #ff4956 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(255, 73, 86, 0.24);
+}
+
+.site-nav .nav-login-trigger:hover {
+  transform: translateY(-1px);
+}
+
 .site-footer {
   margin-top: 3rem;
   padding: 32px 0 48px;
@@ -220,6 +236,108 @@ a.btn-secondary {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.login-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 120;
+}
+
+.login-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.login-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 5, 12, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.login-modal-panel {
+  position: relative;
+  width: min(420px, calc(100% - 24px));
+  background: linear-gradient(180deg, rgba(13, 20, 34, 0.98), rgba(7, 13, 23, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+}
+
+.login-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.login-modal-panel h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.9rem;
+  color: #fff;
+}
+
+.login-modal-panel p {
+  margin: 0 0 1.4rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.login-modal-form label {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.login-modal-form input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  color: #fff;
+  padding: 0.95rem 1rem;
+  margin-bottom: 1.1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-modal-form input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.login-modal-form input:focus {
+  border-color: rgba(255, 116, 82, 0.8);
+  box-shadow: 0 0 0 4px rgba(255, 116, 82, 0.12);
+}
+
+.login-modal-form button {
+  width: 100%;
+}
+
+.login-modal-note {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
 @media (max-width: 900px) {
   .site-nav {
     justify-content: flex-end;
@@ -250,5 +368,9 @@ a.btn-secondary {
 
   .cta-panel {
     padding: 30px 24px;
+  }
+
+  .login-modal-panel {
+    padding: 24px;
   }
 }
