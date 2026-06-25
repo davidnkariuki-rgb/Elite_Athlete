@@ -5,30 +5,63 @@ body.gallery-page {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 3rem auto 2.5rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: 24px;
+  gap: 0.9rem;
+  margin: 2.5rem auto 2.5rem;
 }
 
 .gallery-item {
   position: relative;
-  background: rgba(6, 10, 18, 0.7);
+  grid-column: span 4;
+  grid-row: span 15;
+  background: rgba(6, 10, 18, 0.74);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(5),
+.gallery-item:nth-child(12),
+.gallery-item:nth-child(13) {
+  grid-column: span 6;
+}
+
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(13) {
+  grid-row: span 18;
+}
+
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(11),
+.gallery-item:nth-child(14),
+.gallery-item:nth-child(15) {
+  grid-column: span 3;
+  grid-row: span 12;
+}
+
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(6),
+.gallery-item:nth-child(10) {
+  grid-column: span 3;
+  grid-row: span 16;
+}
+
 .gallery-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
-  background: rgba(6, 10, 18, 0.88);
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.38);
+  background: rgba(6, 10, 18, 0.9);
 }
 
 .gallery-item img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 430px;
+  height: 100%;
   display: block;
   object-fit: cover;
   transition: transform 0.35s ease;
@@ -39,46 +72,81 @@ body.gallery-page {
 }
 
 .gallery-item figcaption {
-  position: relative;
+  position: absolute;
+  inset: auto 0 0 0;
   margin: 0;
-  padding: 1.2rem 1.4rem;
-  background: linear-gradient(180deg, rgba(3, 6, 14, 0) 0%, rgba(3, 6, 14, 0.95) 90%);
+  padding: 0.95rem 1.1rem;
+  background: linear-gradient(180deg, rgba(3, 6, 14, 0) 0%, rgba(3, 6, 14, 0.92) 85%);
   color: #f5f5f5;
-  font-size: 0.96rem;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  line-height: 1.45;
   letter-spacing: 0.01em;
+  z-index: 2;
 }
 
 .gallery-item::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.45) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.52) 100%);
   pointer-events: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: 22px;
   }
 
-  .gallery-item img {
-    height: 380px;
+  .gallery-item {
+    grid-column: span 3;
+    grid-row: span 14;
+  }
+
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(5),
+  .gallery-item:nth-child(12),
+  .gallery-item:nth-child(13) {
+    grid-column: span 6;
+    grid-row: span 17;
+  }
+
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(11),
+  .gallery-item:nth-child(14),
+  .gallery-item:nth-child(15),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(6),
+  .gallery-item:nth-child(10) {
+    grid-column: span 3;
+    grid-row: span 13;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
   }
 
-  .gallery-item img {
-    height: 320px;
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery-item img {
-    height: 280px;
+  .gallery-item,
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(5),
+  .gallery-item:nth-child(6),
+  .gallery-item:nth-child(10),
+  .gallery-item:nth-child(11),
+  .gallery-item:nth-child(12),
+  .gallery-item:nth-child(13),
+  .gallery-item:nth-child(14),
+  .gallery-item:nth-child(15) {
+    grid-column: 1;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 250px;
   }
 }
