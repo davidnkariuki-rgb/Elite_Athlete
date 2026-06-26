@@ -37,7 +37,7 @@
 				</div>
 
 				<section class="contact-grid">
-					<form class="contact-form" method="post" action="mailto:info@eliteathlete.com">
+					<form class="contact-form" method="post" action="mailto:info@eliteathlete.com" data-requires-auth-form data-auth-action="send a contact message">
 						<label for="name">Name</label>
 						<input id="name" name="name" type="text" required>
 
@@ -69,6 +69,7 @@
 			</div>
 		</footer>
 
+		<script src="../js/auth-guard.js"></script>
 		<script src="../js/auth-modal.js"></script>
 		<script src="../js/bmi.js"></script>
 		<script src="../js/blog.js"></script>

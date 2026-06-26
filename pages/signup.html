@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Sign Up - Elite Athlete</title>
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/login.css">
+		<link rel="stylesheet" href="../css/theme.css">
+		<script src="../js/theme.js"></script>
+	</head>
+	<body class="page-background">
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="index.html">Elite Athlete</a>
+				<nav class="site-nav">
+					<a href="training.html">Training</a>
+					<a href="nutrition.html">Nutrition</a>
+					<a href="coaches.html">Coaches</a>
+					<a href="blog.html">Blog</a>
+					<a href="gallery.html">Gallery</a>
+					<a href="events.html">Events</a>
+					<a href="faq.html">FAQ</a>
+					<a href="shop.html">Shop</a>
+					<a href="contact.html">Contact</a>
+					<button id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="container login-page">
+				<div class="page-intro login-intro">
+					<p class="eyebrow">Create Account</p>
+					<h1>Sign up for Elite Athlete</h1>
+					<p>Create your account to access personalized training, nutrition plans, and coaching resources.</p>
+				</div>
+
+				<section class="login-layout">
+					<form class="login-form" id="signupForm" action="#" method="post" novalidate>
+						<label for="name">Full Name</label>
+						<input id="name" name="name" type="text" placeholder="Your full name" required>
+
+						<label for="email">Gmail Address</label>
+						<input id="email" name="email" type="email" placeholder="athlete@gmail.com" pattern=".+@gmail\.com" required>
+
+						<label for="phone">Phone Number</label>
+						<input id="phone" name="phone" type="tel" placeholder="0123456789" inputmode="numeric" required>
+
+						<label for="password">Password</label>
+						<input id="password" name="password" type="password" placeholder="Create your password" minlength="6" required>
+
+						<button class="btn btn-primary" type="submit">Create Account</button>
+						<p id="authStatus" aria-live="polite"></p>
+					</form>
+
+					<aside class="login-help">
+						<h2>Already Registered?</h2>
+						<p>Use your existing account to log in and continue your performance journey.</p>
+						<ul>
+							<li>Use the same Gmail and phone you registered with.</li>
+							<li>Keep your password secure and private.</li>
+							<li>Need access now? Go straight to login.</li>
+						</ul>
+						<a class="btn btn-secondary" href="login.html">Go to Login</a>
+					</aside>
+				</section>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<p>Elite Athlete - Sports Training & Performance Platform</p>
+				<p>&copy; 2026 Elite Athlete. All rights reserved.</p>
+			</div>
+		</footer>
+
+		<script src="../js/auth-modal.js"></script>
+		<script src="../js/auth.js"></script>
+		<script src="../js/bmi.js"></script>
+		<script src="../js/blog.js"></script>
+		<script src="../js/nutrition.js"></script>
+		<script src="../js/events.js"></script>
+	</body>
+</html>

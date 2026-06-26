@@ -36,13 +36,34 @@
           <p>Official Elite Athlete gear and training guides to support your journey.</p>
         </div>
 
+        <section class="cart-panel" aria-live="polite">
+          <div class="cart-panel-header">
+            <h2>Your Cart</h2>
+            <span id="cartCount" class="cart-count">0 items</span>
+          </div>
+          <ul id="cartItems" class="cart-items">
+            <li class="cart-empty">Your cart is empty. Add products to begin.</li>
+          </ul>
+          <div class="cart-summary">
+            <p>Subtotal</p>
+            <p id="cartSubtotal">$0.00</p>
+          </div>
+          <div class="cart-panel-actions">
+            <button id="clearCartBtn" class="btn btn-secondary" type="button" data-requires-auth data-auth-action="manage your cart">Clear Cart</button>
+            <button id="checkoutBtn" class="btn btn-primary" type="button" data-requires-auth data-auth-action="checkout">Checkout</button>
+          </div>
+        </section>
+
         <section class="products-grid">
           <article class="product-card">
             <img src="../assets/shopimages/images.jpg" alt="Training guide">
             <h3>Training Guide PDF</h3>
             <p class="price">$9.99</p>
             <p>Comprehensive 12-week training guide with progressions and sample weeks.</p>
-            <a class="btn btn-primary" href="../assets/pdf/Training%20Guide.pdf" target="_blank" rel="noopener">View Guide</a>
+            <div class="product-actions">
+              <a class="btn btn-secondary" href="../assets/pdf/Training%20Guide.pdf" target="_blank" rel="noopener">View Guide</a>
+              <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="guide-pdf" data-product-name="Training Guide PDF" data-product-price="9.99" data-product-image="../assets/shopimages/images.jpg">Add to Cart</button>
+            </div>
           </article>
 
           <article class="product-card">
@@ -50,7 +71,7 @@
             <h3>Elite Athlete Water Bottle</h3>
             <p class="price">$19.99</p>
             <p>Insulated bottle, 750ml, dishwasher-safe.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="water-bottle" data-product-name="Elite Athlete Water Bottle" data-product-price="19.99" data-product-image="../assets/shopimages/images%20(7).jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -58,7 +79,7 @@
             <h3>Performance Training Gloves</h3>
             <p class="price">$22.99</p>
             <p>Breathable grip gloves designed for lifting sessions, circuits, and daily training.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="training-gloves" data-product-name="Performance Training Gloves" data-product-price="22.99" data-product-image="../assets/shopimages/gloves.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -66,7 +87,7 @@
             <h3>Speed Skipping Rope</h3>
             <p class="price">$18.99</p>
             <p>Adjustable rope for warm-ups, conditioning work, and coordination drills.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="skipping-rope" data-product-name="Speed Skipping Rope" data-product-price="18.99" data-product-image="../assets/shopimages/skipping%20rope.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -74,7 +95,7 @@
             <h3>Elite Gym Trousers</h3>
             <p class="price">$39.99</p>
             <p>Tapered training trousers with stretch fabric for comfort during intense sessions.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="gym-trousers" data-product-name="Elite Gym Trousers" data-product-price="39.99" data-product-image="../assets/shopimages/gym%20trousers.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -82,7 +103,7 @@
             <h3>Women's Performance Leggings</h3>
             <p class="price">$34.99</p>
             <p>Supportive high-rise leggings built for strength work, cardio, and recovery days.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="womens-leggings" data-product-name="Women's Performance Leggings" data-product-price="34.99" data-product-image="../assets/shopimages/girl%20leggings.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -90,7 +111,7 @@
             <h3>Women's Training Shorts</h3>
             <p class="price">$27.99</p>
             <p>Lightweight training shorts with flexible movement and breathable fabric.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="womens-shorts" data-product-name="Women's Training Shorts" data-product-price="27.99" data-product-image="../assets/shopimages/girl%20shorts.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -98,7 +119,7 @@
             <h3>Elite Training Mat</h3>
             <p class="price">$29.99</p>
             <p>Durable non-slip exercise mat for stretching, mobility work, and floor sessions.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="training-mat" data-product-name="Elite Training Mat" data-product-price="29.99" data-product-image="../assets/shopimages/gym%20mat.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -106,7 +127,7 @@
             <h3>Compact Weight Set</h3>
             <p class="price">$64.99</p>
             <p>Versatile training weights for home workouts, strength development, and conditioning.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="weight-set" data-product-name="Compact Weight Set" data-product-price="64.99" data-product-image="../assets/shopimages/gym%20weights.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -114,7 +135,7 @@
             <h3>Whey Protein Blend</h3>
             <p class="price">$44.99</p>
             <p>High-protein recovery formula to support muscle repair and post-workout nutrition.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="whey-protein" data-product-name="Whey Protein Blend" data-product-price="44.99" data-product-image="../assets/shopimages/whey%20protein.jpg">Add to Cart</button>
           </article>
 
           <article class="product-card">
@@ -122,7 +143,7 @@
             <h3>Elite Performance Shoes</h3>
             <p class="price">$79.99</p>
             <p>Lightweight training shoes with responsive cushioning and all-day support.</p>
-            <a class="btn btn-primary" href="#">Buy</a>
+            <button class="btn btn-primary add-to-cart" type="button" data-requires-auth data-auth-action="buy products" data-product-id="performance-shoes" data-product-name="Elite Performance Shoes" data-product-price="79.99" data-product-image="../assets/shopimages/shoes.jpg">Add to Cart</button>
           </article>
         </section>
       </section>
@@ -135,6 +156,8 @@
       </div>
     </footer>
 
+    <script src="../js/auth-guard.js"></script>
+    <script src="../js/shop-cart.js"></script>
     <script src="../js/auth-modal.js"></script>
     <script src="../js/bmi.js"></script>
     <script src="../js/blog.js"></script>

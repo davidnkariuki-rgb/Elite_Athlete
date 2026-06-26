@@ -41,49 +41,49 @@
 						<h3>Performance Workshop: Strength & Power</h3>
 						<p class="event-meta">July 10, 2026 • 09:00 – 13:00 • Training Center</p>
 						<p>Hands-on workshop covering progressive overload, power development, and athlete monitoring techniques.</p>
-						<button class="btn btn-secondary register-btn" data-event="Performance Workshop: Strength & Power">Register</button>
+						<button class="btn btn-secondary register-btn" data-event="Performance Workshop: Strength & Power" data-requires-auth data-auth-action="register for events">Register</button>
 					</article>
 
 					<article class="event-card">
 						<h3>Nutrition Seminar: Fuel for Recovery</h3>
 						<p class="event-meta">July 24, 2026 • 18:00 – 20:00 • Online</p>
 						<p>Interactive seminar on peri-workout nutrition, supplements, and meal planning for athletes.</p>
-						<button class="btn btn-secondary register-btn" data-event="Nutrition Seminar: Fuel for Recovery">Register</button>
+						<button class="btn btn-secondary register-btn" data-event="Nutrition Seminar: Fuel for Recovery" data-requires-auth data-auth-action="register for events">Register</button>
 					</article>
 
 					<article class="event-card">
 						<h3>Technique Clinic: Sprint & Agility</h3>
 						<p class="event-meta">August 14, 2026 • 10:00 – 14:00 • Outdoor Field</p>
 						<p>Field-based session focusing on sprint mechanics, acceleration drills, and change-of-direction training.</p>
-						<button class="btn btn-secondary register-btn" data-event="Technique Clinic: Sprint & Agility">Register</button>
+						<button class="btn btn-secondary register-btn" data-event="Technique Clinic: Sprint & Agility" data-requires-auth data-auth-action="register for events">Register</button>
 					</article>
 
 					<article class="event-card">
 						<h3>Mental Performance Masterclass</h3>
 						<p class="event-meta">August 28, 2026 • 14:00 – 17:00 • Training Center</p>
 						<p>Deep dive into visualization, mental toughness, and competitive psychology with certified sports psychologist.</p>
-						<button class="btn btn-secondary register-btn" data-event="Mental Performance Masterclass">Register</button>
+						<button class="btn btn-secondary register-btn" data-event="Mental Performance Masterclass" data-requires-auth data-auth-action="register for events">Register</button>
 					</article>
 
 					<article class="event-card">
 						<h3>Endurance Training Summit</h3>
 						<p class="event-meta">September 11, 2026 • 09:00 – 16:00 • Outdoor Field</p>
 						<p>Full-day summit covering periodization, pacing strategies, and aerobic conditioning for distance athletes.</p>
-						<button class="btn btn-secondary register-btn" data-event="Endurance Training Summit">Register</button>
+						<button class="btn btn-secondary register-btn" data-event="Endurance Training Summit" data-requires-auth data-auth-action="register for events">Register</button>
 					</article>
 
 					<article class="event-card">
 						<h3>Injury Prevention & Mobility Workshop</h3>
 						<p class="event-meta">September 25, 2026 • 10:00 – 12:30 • Training Center</p>
 						<p>Hands-on workshop on mobility assessment, injury prevention strategies, and recovery protocols.</p>
-						<button class="btn btn-secondary register-btn" data-event="Injury Prevention & Mobility Workshop">Register</button>
+						<button class="btn btn-secondary register-btn" data-event="Injury Prevention & Mobility Workshop" data-requires-auth data-auth-action="register for events">Register</button>
 					</article>
 
 					<article class="event-card">
 						<h3>Youth Development Program Kickoff</h3>
 						<p class="event-meta">October 5, 2026 • 11:00 – 15:00 • Training Center</p>
 						<p>Launch event for our new youth athlete development program with elite coaching staff and mentorship opportunities.</p>
-						<button class="btn btn-secondary register-btn" data-event="Youth Development Program Kickoff">Register</button>
+						<button class="btn btn-secondary register-btn" data-event="Youth Development Program Kickoff" data-requires-auth data-auth-action="register for events">Register</button>
 					</article>
 				</section>
 
@@ -94,7 +94,7 @@
 						<button class="modal-close" id="closeEventModal">&times;</button>
 						<h2>Register for Event</h2>
 						<p class="event-title" id="eventTitle"></p>
-						<form class="event-form" id="eventForm">
+						<form class="event-form" id="eventForm" data-requires-auth-form data-auth-action="submit event registration">
 							<div class="form-group">
 								<label for="fullName">Full Name *</label>
 								<input type="text" id="fullName" name="fullName" required>
@@ -153,6 +153,7 @@
 			</div>
 		</footer>
 
+		<script src="../js/auth-guard.js"></script>
 		<script src="../js/auth-modal.js"></script>
 		<script src="../js/bmi.js"></script>
 		<script src="../js/blog.js"></script>

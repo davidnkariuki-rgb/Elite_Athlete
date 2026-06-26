@@ -41,42 +41,42 @@
 						<h3>Performance Meal Plan</h3>
 						<p class="plan-meta">Daily energy-focused meals • 7-day sample</p>
 						<p>Balanced meals timed around training to maximize energy and recovery.</p>
-						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-performance">View sample</a>
+						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-performance" data-requires-auth data-auth-action="view nutrition samples">View sample</a>
 					</article>
 
 					<article class="plan-card">
 						<h3>Weight Management Plan</h3>
 						<p class="plan-meta">Calorie-targeted • Customizable</p>
 						<p>Strategies for safe weight loss or gain while maintaining performance.</p>
-						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-weight">View sample</a>
+						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-weight" data-requires-auth data-auth-action="view nutrition samples">View sample</a>
 					</article>
 
 					<article class="plan-card">
 						<h3>Recovery & Hydration</h3>
 						<p class="plan-meta">Post-workout protocols</p>
 						<p>Practical snack and meal ideas to accelerate muscle repair and replenish glycogen.</p>
-						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-recovery">Learn more</a>
+						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-recovery" data-requires-auth data-auth-action="learn more about nutrition plans">Learn more</a>
 					</article>
 
 					<article class="plan-card">
 						<h3>Plant-Powered Performance</h3>
 						<p class="plan-meta">Vegetarian athlete nutrition</p>
 						<p>Plant-based meal templates that support strength, recovery, and energy balance.</p>
-						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-plant">View sample</a>
+						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-plant" data-requires-auth data-auth-action="view nutrition samples">View sample</a>
 					</article>
 
 					<article class="plan-card">
 						<h3>Pre-Competition Fuel</h3>
 						<p class="plan-meta">Peaking nutrition plan</p>
 						<p>Optimized meals for the 24-48 hours before competition to maximize performance readiness.</p>
-						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-precomp">Learn more</a>
+						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-precomp" data-requires-auth data-auth-action="learn more about nutrition plans">Learn more</a>
 					</article>
 
 					<article class="plan-card">
 						<h3>Recovery Smoothie Plan</h3>
 						<p class="plan-meta">Simple shakes and snacks</p>
 						<p>Easy-to-make smoothie and snack ideas for fast recovery and muscle rebuilding.</p>
-						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-smoothies">View sample</a>
+						<a class="btn btn-secondary plan-action" href="#" data-plan="plan-smoothies" data-requires-auth data-auth-action="view nutrition samples">View sample</a>
 					</article>
 				</section>
 
@@ -147,14 +147,14 @@
 					<h2>Nutrition Tools</h2>
 					<p>Try our macro calculator and downloadable grocery lists to make healthy eating simple.</p>
 					<div class="tools-actions">
-						<a class="btn btn-primary" href="bmi.html">BMI Calculator</a>
+						<a class="btn btn-primary" href="bmi.html" data-requires-auth data-auth-action="open the BMI calculator">BMI Calculator</a>
 					</div>
 				</section>
 
 				<div class="container cta-panel">
 					<h2>Need Personalized Nutrition?</h2>
 					<p>Work with our nutrition coach to build a plan that matches your training and goals.</p>
-					<a class="btn btn-primary" href="contact.html">Book a Consultation</a>
+					<a class="btn btn-primary" href="contact.html" data-requires-auth data-auth-action="book a consultation">Book a Consultation</a>
 				</div>
 			</section>
 		</main>
@@ -166,6 +166,7 @@
 			</div>
 		</footer>
 
+		<script src="../js/auth-guard.js"></script>
 		<script src="../js/auth-modal.js"></script>
 		<script src="../js/bmi.js"></script>
 		<script src="../js/blog.js"></script>

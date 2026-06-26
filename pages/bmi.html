@@ -37,7 +37,7 @@
       </div>
 
       <section class="calculator-panel">
-        <form id="bmi-form" class="calculator-form">
+        <form id="bmi-form" class="calculator-form" data-requires-auth-form data-auth-action="use the BMI calculator">
           <label for="height">Height (cm)</label>
           <input id="height" name="height" type="number" min="100" max="250" required>
 
@@ -59,6 +59,7 @@
     </div>
   </footer>
 
+  <script src="../js/auth-guard.js"></script>
   <script src="../js/auth-modal.js"></script>
   <script src="../js/bmi.js"></script>
   <script src="../js/blog.js"></script>
