@@ -16,6 +16,16 @@
     return prefix.charAt(0).toUpperCase() + prefix.slice(1);
   }
 
+  function getSignupDraft() {
+    try {
+      const raw = localStorage.getItem("eliteAthleteSignupDraft");
+      const parsed = JSON.parse(raw || "null");
+      return parsed && typeof parsed === "object" ? parsed : null;
+    } catch {
+      return null;
+    }
+  }
+
   function saveMockUser(user) {
     localStorage.setItem("eliteAthleteUser", JSON.stringify(user));
   }
@@ -36,7 +46,14 @@
 
     try {
       // Frontend-only mock signup data (not persisted to a backend).
-      localStorage.setItem("eliteAthleteSignupDraft", JSON.stringify(payload));
+      localStorage.setItem(
+        "eliteAthleteSignupDraft",
+        JSON.stringify({
+          name: payload.name,
+          email: payload.email,
+          phone: payload.phone
+        })
+      );
       setStatus("Account created successfully. Redirecting to login...", false);
       form.reset();
       setTimeout(function () {
@@ -61,8 +78,19 @@
     setStatus("Logging you in...", false);
 
     try {
+      const signupDraft = getSignupDraft();
+      const isSamePerson =
+        signupDraft &&
+        String(signupDraft.email || "").toLowerCase() === payload.email.toLowerCase() &&
+        String(signupDraft.phone || "") === payload.phone;
+
+      if (!isSamePerson) {
+        setStatus("Please signup first before login.", true);
+        return;
+      }
+
       saveMockUser({
-        name: firstNameFromEmail(payload.email),
+        name: String(signupDraft.name || "Athlete"),
         email: payload.email,
         phone: payload.phone,
         createdAt: new Date().toISOString()

@@ -100,12 +100,17 @@ a.btn-secondary {
 }
 
 .site-nav {
-  display: flex;
   gap: 0.85rem;
-  flex-wrap: wrap;
 }
 
-.site-nav a {
+.navbar .site-nav {
+  width: 100%;
+  margin-left: 0 !important;
+  justify-content: flex-start;
+}
+
+.site-nav a,
+.site-nav .nav-link {
   color: rgba(255, 255, 255, 0.88);
   font-size: 0.88rem;
   font-weight: 600;
@@ -115,9 +120,18 @@ a.btn-secondary {
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav .nav-link:hover {
   color: #fff;
   background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.36);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 116, 82, 0.26);
 }
 
 .site-nav .nav-login-trigger {
@@ -161,6 +175,18 @@ a.btn-secondary {
 .site-nav .nav-logout-trigger:hover {
   transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 991.98px) {
+  .navbar .site-nav {
+    gap: 0.35rem;
+    padding-top: 0.7rem;
+    margin-left: 0 !important;
+  }
+
+  .site-nav .nav-link {
+    padding: 0.5rem 0.7rem;
+  }
 }
 
 .site-footer {

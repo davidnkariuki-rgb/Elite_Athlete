@@ -15,7 +15,7 @@
 
   function redirectToLogin(actionName) {
     const action = actionName || "continue";
-    alert(`Please log in or create an account to ${action}.`);
+    alert(`Please signup or login to ${action}.`);
     window.location.href = "login.html";
   }
 

@@ -6,6 +6,16 @@ function initAuthModal() {
     return prefix.charAt(0).toUpperCase() + prefix.slice(1);
   }
 
+  function getSignupDraft() {
+    try {
+      const raw = localStorage.getItem('eliteAthleteSignupDraft');
+      const parsed = JSON.parse(raw || 'null');
+      return parsed && typeof parsed === 'object' ? parsed : null;
+    } catch {
+      return null;
+    }
+  }
+
   function getStoredUser() {
     try {
       const rawUser = localStorage.getItem('eliteAthleteUser');
@@ -255,8 +265,19 @@ function initAuthModal() {
       };
 
       try {
+        const signupDraft = getSignupDraft();
+        const isSamePerson =
+          signupDraft &&
+          String(signupDraft.email || '').toLowerCase() === payload.email.toLowerCase() &&
+          String(signupDraft.phone || '') === payload.phone;
+
+        if (!isSamePerson) {
+          alert('Please signup first before login.');
+          return;
+        }
+
         localStorage.setItem('eliteAthleteUser', JSON.stringify({
-          name: firstNameFromEmail(payload.email),
+          name: String(signupDraft.name || 'Athlete'),
           email: payload.email,
           phone: payload.phone,
           createdAt: new Date().toISOString()
@@ -288,7 +309,14 @@ function initAuthModal() {
 
       try {
         // Frontend-only mock signup data (not persisted to a backend).
-        localStorage.setItem('eliteAthleteSignupDraft', JSON.stringify(payload));
+        localStorage.setItem(
+          'eliteAthleteSignupDraft',
+          JSON.stringify({
+            name: payload.name,
+            email: payload.email,
+            phone: payload.phone
+          })
+        );
         alert("Account created successfully! Redirecting to login...");
         signupModalForm.reset();
         closeLoginModal();
