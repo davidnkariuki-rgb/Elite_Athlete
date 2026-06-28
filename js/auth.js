@@ -1,6 +1,4 @@
 (function () {
-  const API_BASE = window.location.protocol === "file:" ? "http://localhost:5000" : window.location.origin;
-
   function setStatus(message, isError) {
     const statusEl = document.getElementById("authStatus");
     if (!statusEl) {
@@ -13,24 +11,13 @@
     statusEl.style.color = isError ? "#ff9a9a" : "#97f7bf";
   }
 
-  async function request(path, payload) {
-    const response = await fetch(`${API_BASE}${path}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+  function firstNameFromEmail(email) {
+    const prefix = String(email || "").split("@")[0] || "Athlete";
+    return prefix.charAt(0).toUpperCase() + prefix.slice(1);
+  }
 
-    const data = await response.json().catch(function () {
-      return { message: "Unexpected server response." };
-    });
-
-    if (!response.ok) {
-      throw new Error(data.message || "Request failed.");
-    }
-
-    return data;
+  function saveMockUser(user) {
+    localStorage.setItem("eliteAthleteUser", JSON.stringify(user));
   }
 
   async function handleSignupSubmit(event) {
@@ -48,8 +35,8 @@
     setStatus("Creating your account...", false);
 
     try {
-      const data = await request("/api/auth/signup", payload);
-      localStorage.setItem("eliteAthleteUser", JSON.stringify(data.user));
+      // Frontend-only mock signup data (not persisted to a backend).
+      localStorage.setItem("eliteAthleteSignupDraft", JSON.stringify(payload));
       setStatus("Account created successfully. Redirecting to login...", false);
       form.reset();
       setTimeout(function () {
@@ -74,8 +61,12 @@
     setStatus("Logging you in...", false);
 
     try {
-      const data = await request("/api/auth/login", payload);
-      localStorage.setItem("eliteAthleteUser", JSON.stringify(data.user));
+      saveMockUser({
+        name: firstNameFromEmail(payload.email),
+        email: payload.email,
+        phone: payload.phone,
+        createdAt: new Date().toISOString()
+      });
       setStatus("Login successful. Redirecting to home page...", false);
       form.reset();
       setTimeout(function () {

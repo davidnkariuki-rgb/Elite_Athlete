@@ -1,13 +1,75 @@
 function initAuthModal() {
   const siteNav = document.querySelector('.site-nav');
 
-  if (siteNav && !siteNav.querySelector('.nav-login-trigger')) {
+  function firstNameFromEmail(email) {
+    const prefix = String(email || '').split('@')[0] || 'Athlete';
+    return prefix.charAt(0).toUpperCase() + prefix.slice(1);
+  }
+
+  function getStoredUser() {
+    try {
+      const rawUser = localStorage.getItem('eliteAthleteUser');
+      const parsedUser = JSON.parse(rawUser || 'null');
+      return parsedUser && parsedUser.name ? parsedUser : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function getDisplayName(user) {
+    const fullName = String(user.name || '').trim();
+    if (!fullName) {
+      return 'Athlete';
+    }
+
+    return fullName.split(' ')[0];
+  }
+
+  function renderNavAuthState() {
+    if (!siteNav) {
+      return;
+    }
+
+    const oldLoginTrigger = siteNav.querySelector('.nav-login-trigger');
+    const oldUserDisplay = siteNav.querySelector('.nav-user-display');
+    const oldLogoutTrigger = siteNav.querySelector('.nav-logout-trigger');
+
+    if (oldLoginTrigger) {
+      oldLoginTrigger.remove();
+    }
+
+    if (oldUserDisplay) {
+      oldUserDisplay.remove();
+    }
+
+    if (oldLogoutTrigger) {
+      oldLogoutTrigger.remove();
+    }
+
+    const storedUser = getStoredUser();
+    if (storedUser) {
+      const userDisplay = document.createElement('span');
+      userDisplay.className = 'nav-user-display';
+      userDisplay.textContent = `Hi, ${getDisplayName(storedUser)}`;
+
+      const logoutTrigger = document.createElement('button');
+      logoutTrigger.type = 'button';
+      logoutTrigger.className = 'nav-logout-trigger';
+      logoutTrigger.textContent = 'Logout';
+
+      siteNav.appendChild(userDisplay);
+      siteNav.appendChild(logoutTrigger);
+      return;
+    }
+
     const loginTrigger = document.createElement('button');
     loginTrigger.type = 'button';
     loginTrigger.className = 'nav-login-trigger';
     loginTrigger.textContent = 'Login';
     siteNav.appendChild(loginTrigger);
   }
+
+  renderNavAuthState();
 
   if (!document.getElementById('loginModal')) {
     document.body.insertAdjacentHTML(
@@ -61,7 +123,6 @@ function initAuthModal() {
     );
   }
 
-  const loginTrigger = document.querySelector('.nav-login-trigger');
   const loginModal = document.getElementById('loginModal');
   const loginModalBackdrop = document.getElementById('loginModalBackdrop');
   const loginModalClose = document.getElementById('loginModalClose');
@@ -138,8 +199,21 @@ function initAuthModal() {
     document.body.style.overflow = 'auto';
   }
 
-  if (loginTrigger) {
-    loginTrigger.addEventListener('click', openLoginModal);
+  if (siteNav) {
+    siteNav.addEventListener('click', function (event) {
+      const loginTrigger = event.target.closest('.nav-login-trigger');
+      if (loginTrigger) {
+        openLoginModal();
+        return;
+      }
+
+      const logoutTrigger = event.target.closest('.nav-logout-trigger');
+      if (logoutTrigger) {
+        localStorage.removeItem('eliteAthleteUser');
+        renderNavAuthState();
+        closeLoginModal();
+      }
+    });
   }
 
   if (loginModalBackdrop) {
@@ -170,26 +244,72 @@ function initAuthModal() {
   }
 
   if (loginModalForm) {
-    loginModalForm.addEventListener('submit', function (event) {
+    loginModalForm.addEventListener('submit', async function (event) {
       event.preventDefault();
-      alert('Login submitted. Connect this form to your backend when you are ready.');
-      loginModalForm.reset();
-      closeLoginModal();
+      
+      const formData = new FormData(loginModalForm);
+      const payload = {
+        email: String(formData.get("email") || "").trim(),
+        phone: String(formData.get("phone") || "").trim(),
+        password: String(formData.get("password") || "")
+      };
+
+      try {
+        localStorage.setItem('eliteAthleteUser', JSON.stringify({
+          name: firstNameFromEmail(payload.email),
+          email: payload.email,
+          phone: payload.phone,
+          createdAt: new Date().toISOString()
+        }));
+        alert("Login successful!");
+        loginModalForm.reset();
+        renderNavAuthState();
+        closeLoginModal();
+        setTimeout(function() {
+          window.location.href = "index.html";
+        }, 500);
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
     });
   }
 
   if (signupModalForm) {
-    signupModalForm.addEventListener('submit', function (event) {
+    signupModalForm.addEventListener('submit', async function (event) {
       event.preventDefault();
-      alert('Sign up submitted. Connect this form to your backend when you are ready.');
-      signupModalForm.reset();
-      closeLoginModal();
+      
+      const formData = new FormData(signupModalForm);
+      const payload = {
+        name: String(formData.get("name") || "").trim(),
+        email: String(formData.get("email") || "").trim(),
+        phone: String(formData.get("phone") || "").trim(),
+        password: String(formData.get("password") || "")
+      };
+
+      try {
+        // Frontend-only mock signup data (not persisted to a backend).
+        localStorage.setItem('eliteAthleteSignupDraft', JSON.stringify(payload));
+        alert("Account created successfully! Redirecting to login...");
+        signupModalForm.reset();
+        closeLoginModal();
+        setTimeout(function() {
+          window.location.href = "login.html";
+        }, 500);
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
     });
   }
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && loginModal && loginModal.classList.contains('active')) {
       closeLoginModal();
+    }
+  });
+
+  window.addEventListener('storage', function (event) {
+    if (event.key === 'eliteAthleteUser') {
+      renderNavAuthState();
     }
   });
 }
