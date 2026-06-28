@@ -54,6 +54,13 @@ body.page-background .contact-grid {
   width: 100%;
 }
 
+.contact-status {
+  margin: 0.9rem 0 0;
+  min-height: 1.4rem;
+  color: #7bf0a6;
+  font-weight: 600;
+}
+
 .contact-info h3,
 .contact-info h4 {
   margin: 0 0 1rem;
