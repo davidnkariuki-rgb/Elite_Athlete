@@ -24,7 +24,7 @@
   }
 
   function formatMoney(value) {
-    return `$${value.toFixed(2)}`;
+    return `KSh ${Math.round(value).toLocaleString("en-KE")}`;
   }
 
   function getElements() {

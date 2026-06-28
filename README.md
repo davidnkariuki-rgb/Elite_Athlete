@@ -2,7 +2,7 @@
 
  A fully responsive, multi-page web application dedicated to athletic training, nutrition, and peak performance.
 
-## 📌 Project Overview
+## Project Overview
 
 EliteAthlete is a professional web platform built for athletes, fitness enthusiasts, and coaches across the globe. It provides structured training programs, sport-specific nutrition advice, expert coach profiles, an interactive gallery, and the latest fitness news all in one clean, modern interface.
 
@@ -57,7 +57,6 @@ Elite_Athlete/
 │   ├── login.css
 │   ├── nutrition.css
 │   ├── shop.css
-│   ├── style.css
 │   ├── theme.css
 │   └── training.css
 ├── js/
